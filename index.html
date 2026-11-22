@@ -4,350 +4,132 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#183c36">
-  <meta name="description" content="A professional CRE teaching portfolio on The Good Samaritan.">
-  <title>Professional Teaching Portfolio – CRE: The Good Samaritan</title>
+  <meta name="description" content="A professional History teaching portfolio on Evolution of Man.">
+  <title>Professional Teaching Portfolio - History: Evolution of Man</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #20302d;
-      --muted: #64736e;
-      --green: #183c36;
-      --green-soft: #e8f0ec;
-      --gold: #c58a43;
-      --paper: #fffefa;
-      --canvas: #f3f5f1;
-      --line: #dce3dd;
-      --shadow: 0 16px 44px rgb(26 49 42 / 7%);
-      font-family: "Segoe UI", "Aptos", "Helvetica Neue", Arial, sans-serif;
+        --bg-body: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --primary: #4f46e5;
+        --primary-hover: #4338ca;
+        --accent: #0ea5e9;
+        --nav-bg: rgba(255, 255, 255, 0.85);
+        --border-color: #e2e8f0;
+        --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+        --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.08);
+        --radius: 16px;
+        --ink: var(--text-main);
+        --muted: var(--text-muted);
+        --green: var(--primary);
+        --green-soft: #eef2ff;
+        --gold: var(--accent);
+        --paper: var(--bg-card);
+        --canvas: var(--bg-body);
+        --line: var(--border-color);
+        --shadow: var(--shadow-md);
+        font-family: Inter, "Segoe UI", "Aptos", "Helvetica Neue", Arial, sans-serif;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
-    body {
-      margin: 0;
-      background: var(--canvas);
-      color: var(--ink);
-      line-height: 1.65;
-    }
+    body { margin: 0; background: var(--bg-body); color: var(--text-main); line-height: 1.65; }
     a { color: #245c50; }
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 3px;
-    }
-    .skip-link {
-      position: fixed;
-      z-index: 10;
-      top: .75rem;
-      left: .75rem;
-      padding: .65rem 1rem;
-      background: var(--paper);
-      transform: translateY(-160%);
-    }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 10; top: .75rem; left: .75rem; padding: .65rem 1rem; background: var(--paper); transform: translateY(-160%); }
     .skip-link:focus { transform: translateY(0); }
-    .layout {
-      display: block;
-      min-height: 100vh;
-    }
+    .layout { display: block; min-height: 100vh; }
     .sidebar {
       position: sticky;
       top: 0;
-      z-index: 5;
+      z-index: 1000;
       padding: 1rem clamp(1rem, 4vw, 3.75rem) .85rem;
-      background: var(--green);
-      color: #f6f7f2;
-      box-shadow: 0 8px 24px rgb(26 49 42 / 14%);
+      background: var(--nav-bg);
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
-    .brand {
-      display: flex;
-      gap: .75rem;
-      align-items: center;
-      margin: 0 0 .8rem;
-      color: inherit;
-      text-decoration: none;
-    }
-    .brand-mark {
-      display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border: 1px solid rgb(255 255 255 / 28%);
-      border-radius: 50%;
-      color: #f1c781;
-      font-family: Georgia, serif;
-      font-size: 1.1rem;
-    }
+    .brand { display: flex; gap: .75rem; align-items: center; margin: 0 0 .8rem; color: var(--text-main); text-decoration: none; }
+    .brand-mark { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--border-color); border-radius: 50%; color: var(--primary); background: #eef2ff; font-family: Georgia, serif; }
     .brand strong { display: block; font-size: .88rem; line-height: 1.35; }
-    .brand small { color: #c1d0c8; font-size: .73rem; }
-    .nav-label {
-      display: none;
-    }
+    .brand small { color: var(--text-muted); font-size: .73rem; }
+    .nav-label { display: none; }
     .sidebar nav { overflow-x: auto; scrollbar-width: thin; }
+    .sidebar nav::-webkit-scrollbar { display: none; }
+    .sidebar nav { scrollbar-width: none; }
     .nav-list { display: flex; gap: .45rem; width: max-content; min-width: 100%; margin: 0; padding: 0 0 .25rem; list-style: none; }
-    .nav-list a {
-      display: flex;
-      gap: .4rem;
-      align-items: start;
-      padding: .48rem .78rem;
-      border: 1px solid rgb(255 255 255 / 22%);
-      border-radius: 999px;
-      background: rgb(255 255 255 / 5%);
-      color: #e1e9e3;
-      font-size: .81rem;
-      line-height: 1.4;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background .2s ease, border-color .2s ease, transform .2s ease;
-    }
-    .nav-list a:hover, .nav-list a:focus-visible { background: rgb(255 255 255 / 13%); color: #fff; transform: translateY(-1px); }
-    .nav-list a[aria-selected="true"] { border-color: #f1c781; background: #f1c781; color: #183c36; box-shadow: 0 4px 12px rgb(0 0 0 / 14%); }
-    .nav-list a[aria-selected="true"] .number { color: #183c36; }
-    .nav-list .number { color: #e9bd7a; font-variant-numeric: tabular-nums; }
-    .sidebar-note {
-      display: none;
-      padding-top: 1rem;
-      border-top: 1px solid rgb(255 255 255 / 17%);
-      color: #c1d0c8;
-      font-size: .73rem;
-    }
+    .nav-list a { display: flex; gap: .4rem; align-items: start; padding: .48rem .78rem; border: 1px solid transparent; border-radius: 8px; background: transparent; color: var(--text-muted); font-size: .81rem; font-weight: 500; line-height: 1.4; text-decoration: none; white-space: nowrap; transition: all .2s ease; }
+    .nav-list a:hover, .nav-list a:focus-visible { background: var(--border-color); color: var(--text-main); transform: translateY(-1px); }
+    .nav-list a[aria-selected="true"] { border-color: var(--primary); background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
+    .nav-list .number { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+    .nav-list a[aria-selected="true"] .number { color: white; }
+    .sidebar-note { display: none; padding-top: 1rem; border-top: 1px solid rgb(255 255 255 / 17%); color: #c1d0c8; font-size: .73rem; }
     main { min-width: 0; padding: 2rem clamp(1rem, 4vw, 3.75rem) 4rem; }
     .document { width: min(100%, 1020px); margin: 0 auto; }
-    .topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      color: var(--muted);
-      font-size: .77rem;
-    }
-    .topline .folio { font-variant-numeric: tabular-nums; }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 400px;
-      padding: clamp(2rem, 6vw, 4.5rem);
-      border-radius: 16px;
-      background:
-        radial-gradient(ellipse at 90% 14%, rgb(204 163 99 / 17%), transparent 29%),
-        linear-gradient(125deg, #183c36, #245448 73%, #326354);
-      box-shadow: var(--shadow);
-      color: #fffefa;
-    }
-    .hero::after {
-      position: absolute;
-      right: -80px;
-      bottom: -180px;
-      width: 390px;
-      height: 390px;
-      border: 1px solid rgb(255 255 255 / 11%);
-      border-radius: 50%;
-      content: "";
-      box-shadow: 0 0 0 38px rgb(255 255 255 / 3%), 0 0 0 77px rgb(255 255 255 / 2%);
-      pointer-events: none;
-    }
-    .eyebrow {
-      margin: 0 0 .8rem;
-      color: #e9bd7a;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
+    .topline { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--muted); font-size: .77rem; }
+    .hero { position: relative; overflow: hidden; min-height: 400px; padding: clamp(2rem, 6vw, 4.5rem); border-radius: var(--radius); background: linear-gradient(125deg, #312e81, #4f46e5 65%, #0ea5e9); box-shadow: var(--shadow-md); color: #fff; }
+    .hero::after { position: absolute; right: -80px; bottom: -180px; width: 390px; height: 390px; border: 1px solid rgb(255 255 255 / 11%); border-radius: 50%; content: ""; box-shadow: 0 0 0 38px rgb(255 255 255 / 3%), 0 0 0 77px rgb(255 255 255 / 2%); }
+    .eyebrow { margin: 0 0 .8rem; color: #dbeafe; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     h1, h2, h3, p { margin-top: 0; }
-    .hero h1 {
-      max-width: 690px;
-      margin-bottom: 1rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 5vw, 4.1rem);
-      font-weight: 500;
-      letter-spacing: -.035em;
-      line-height: 1.1;
-    }
+    .hero h1 { max-width: 690px; margin-bottom: 1rem; font-family: Georgia, serif; font-size: clamp(2.2rem, 5vw, 4.1rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.1; }
     .hero .subtitle { max-width: 550px; margin-bottom: 2rem; color: #e2ebe4; font-size: 1.02rem; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: .65rem; }
-    .hero-meta span {
-      padding: .35rem .7rem;
-      border: 1px solid rgb(255 255 255 / 25%);
-      border-radius: 99px;
-      color: #f7f5ed;
-      font-size: .75rem;
-    }
-    .section {
-      scroll-margin-top: 1.5rem;
-      margin-top: 1.5rem;
-      padding: clamp(1.35rem, 4vw, 2.4rem);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--paper);
-      box-shadow: 0 6px 24px rgb(26 49 42 / 3%);
-      break-inside: avoid;
-    }
+    .hero-meta span { padding: .35rem .7rem; border: 1px solid rgb(255 255 255 / 25%); border-radius: 99px; color: #f7f5ed; font-size: .75rem; }
+    .section { scroll-margin-top: 1.5rem; margin-top: 1.5rem; padding: clamp(1.35rem, 4vw, 2.4rem); border: 1px solid var(--border-color); border-radius: var(--radius); background: var(--bg-card); box-shadow: var(--shadow-md); break-inside: avoid; }
     .section[hidden], .hero[hidden] { display: none; }
-    .tab-status {
-      margin: 0 0 1rem;
-      color: var(--muted);
-      font-size: .78rem;
-    }
-    .section-heading {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      margin-bottom: 1.35rem;
-    }
-    .section-number {
-      display: grid;
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green-soft);
-      color: var(--green);
-      font-size: .8rem;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-    }
-    h2 {
-      margin: 0;
-      color: var(--green);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.55rem, 3vw, 2rem);
-      font-weight: 500;
-      line-height: 1.2;
-    }
-    .section-kicker { margin: .25rem 0 0; color: var(--muted); font-size: .83rem; }
+    .section-heading { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.35rem; }
+    .section-number { display: grid; flex: 0 0 42px; width: 42px; height: 42px; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: .8rem; font-weight: 700; }
+    h2 { margin: 0; color: var(--green); font-family: Georgia, serif; font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 500; line-height: 1.2; }
     h3 { margin-bottom: .45rem; color: var(--green); font-size: 1rem; }
     p { margin-bottom: .85rem; }
-    .purpose {
-      margin: 0 0 1.3rem;
-      padding: .8rem 1rem;
-      border-left: 3px solid var(--gold);
-      background: #f7f5ee;
-      color: #56625d;
-      font-size: .84rem;
-    }
+    .section-kicker { margin: .25rem 0 0; color: var(--muted); font-size: .83rem; }
+    .purpose { margin: 0 0 1.3rem; padding: .8rem 1rem; border-left: 3px solid var(--gold); background: #f7f5ee; color: #56625d; font-size: .84rem; }
     .purpose strong { color: var(--ink); }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
-    .subcard { padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
-    .subcard p:last-child, .subcard ul:last-child { margin-bottom: 0; }
+    .subcard { padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; background: var(--bg-card); box-shadow: var(--shadow-sm); }
     .profile-row { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.4rem; align-items: start; }
     .profile-photo { display: block; width: 100%; height: auto; border-radius: 9px; }
-    .photo-placeholder, .media-placeholder, .aid-placeholder {
-      display: grid;
-      place-items: center;
-      min-height: 190px;
-      padding: 1rem;
-      border: 1px dashed #9caea3;
-      border-radius: 9px;
-      background: linear-gradient(145deg, #f1f5f0, #f8f6ef);
-      color: #5b6d64;
-      text-align: center;
-      font-size: .8rem;
-    }
-    .photo-placeholder { min-height: 210px; }
-    .placeholder-icon { display: block; margin-bottom: .45rem; color: #82988c; font-size: 1.55rem; }
+    .profile-placeholder { display: grid; width: 150px; height: 150px; min-height: 150px; place-items: center; margin: 0 auto 1.5rem; border: 4px solid var(--bg-card); border-radius: 50%; background: linear-gradient(145deg, #eef2ff, #e0f2fe); color: var(--text-muted); box-shadow: 0 0 0 4px var(--primary); text-align: center; }
+    .profile-placeholder strong { display: block; color: var(--green); font-family: Georgia, serif; font-size: 2.3rem; }
     .teacher-name { margin-bottom: .15rem; color: var(--green); font-family: Georgia, serif; font-size: 1.45rem; }
     .teacher-role { margin-bottom: .8rem; color: var(--muted); font-size: .88rem; }
-    .reflection {
-      margin: 1.3rem 0 0;
-      padding: 1rem 1.1rem;
-      border-radius: 8px;
-      background: #edf3ef;
-      color: #475b51;
-      font-size: .86rem;
-    }
+    .reflection { margin: 1.3rem 0 0; padding: 1rem 1.1rem; border-radius: 12px; background: #eef2ff; color: #475569; font-size: .86rem; }
     .reflection strong { color: var(--green); }
-    .tag {
-      display: inline-block;
-      padding: .2rem .55rem;
-      border-radius: 99px;
-      background: #f4ead8;
-      color: #765322;
-      font-size: .72rem;
-      font-weight: 700;
-    }
+    .tag { display: inline-block; padding: .2rem .55rem; border-radius: 99px; background: #f4ead8; color: #765322; font-size: .72rem; font-weight: 700; }
     .table-wrap { overflow-x: auto; margin: 1rem 0; }
-    table { width: 100%; border-collapse: collapse; font-size: .79rem; }
-    th, td { min-width: 90px; padding: .7rem .65rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
-    th { background: #eaf0ec; color: var(--green); font-size: .73rem; letter-spacing: .02em; }
-    tbody tr:nth-child(even) { background: #fbfcfa; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-sm); font-size: .79rem; }
+    th, td { min-width: 90px; padding: .7rem .65rem; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+    th { background: var(--primary); color: white; font-size: .73rem; letter-spacing: .02em; }
+    td { color: var(--text-muted); }
+    tbody tr:nth-child(even) { background: var(--bg-body); }
+    tbody tr:hover { background: #f1f5f9; }
     ul, ol { padding-left: 1.25rem; }
     li { margin-bottom: .35rem; }
     .step-list { display: grid; gap: .7rem; counter-reset: steps; padding: 0; list-style: none; }
-    .step-list li {
-      position: relative;
-      min-height: 44px;
-      margin: 0;
-      padding: .55rem .75rem .55rem 3rem;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      counter-increment: steps;
-    }
-    .step-list li::before {
-      position: absolute;
-      top: .5rem;
-      left: .65rem;
-      display: grid;
-      width: 26px;
-      height: 26px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green-soft);
-      color: var(--green);
-      content: counter(steps);
-      font-size: .73rem;
-      font-weight: 700;
-    }
-    .video-frame {
-      position: relative;
-      display: grid;
-      overflow: hidden;
-      aspect-ratio: 16 / 9;
-      place-items: center;
-      border-radius: 9px;
-      background: #183c36;
-      color: #f3f1e9;
-      text-align: center;
-    }
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .video-frame .placeholder-icon { color: #e9bd7a; font-size: 2rem; }
-    .quote {
-      margin: 1rem 0;
-      padding: .9rem 1.1rem;
-      border-left: 3px solid var(--gold);
-      color: #42564c;
-      font-family: Georgia, serif;
-      font-size: 1.05rem;
-    }
-    .question-list li { padding-left: .2rem; margin-bottom: .6rem; }
+    .step-list li { position: relative; min-height: 44px; margin: 0; padding: .55rem .75rem .55rem 3rem; border: 1px solid var(--line); border-radius: 7px; counter-increment: steps; }
+    .step-list li::before { position: absolute; top: .5rem; left: .65rem; display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); content: counter(steps); font-size: .73rem; font-weight: 700; }
+    .aid-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .aid-card { min-height: 160px; padding: 1.1rem; border: 2px dashed var(--primary); border-radius: var(--radius); background: linear-gradient(145deg, #eef2ff, #f8fafc); }
+    .aid-card span { display: inline-grid; width: 32px; height: 32px; place-items: center; margin-bottom: .6rem; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 700; }
+    .aid-card h3 { margin-bottom: .35rem; }
+    .video-frame { display: grid; overflow: hidden; aspect-ratio: 16 / 9; place-items: center; border-radius: 9px; background: #183c36; color: #f3f1e9; text-align: center; }
+    .video-frame iframe { width: 100%; height: 100%; border: 0; }
+    .quote { margin: 1rem 0; padding: .9rem 1.1rem; border-left: 3px solid var(--gold); color: #42564c; font-family: Georgia, serif; font-size: 1.05rem; }
     .placeholder-label { color: #66776e; font-size: .74rem; }
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin: 1.2rem .2rem 0;
-      color: var(--muted);
-      font-size: .73rem;
-    }
+    .footer { display: flex; justify-content: space-between; gap: 1rem; margin: 1.2rem .2rem 0; color: var(--muted); font-size: .73rem; }
     @media (max-width: 850px) {
       .sidebar { position: sticky; padding: .85rem 1rem .7rem; }
       .brand { margin-bottom: .65rem; }
-      .nav-list a { padding: .42rem .68rem; font-size: .73rem; }
       main { padding: 1.2rem 1rem 3rem; }
     }
     @media (max-width: 580px) {
       .profile-row, .grid-2 { grid-template-columns: 1fr; }
-      .photo-placeholder { min-height: 170px; }
       .hero { min-height: 0; }
-      .topline { align-items: flex-start; }
       .section { padding: 1.2rem; }
       th, td { min-width: 120px; }
     }
@@ -358,15 +140,13 @@
       .sidebar, .skip-link { display: none !important; }
       main { padding: 0; }
       .document { width: 100%; }
-      .hero { min-height: 0; padding: 2rem; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .section { margin-top: .8rem; padding: 1.1rem; box-shadow: none; break-inside: auto; }
-      .section-heading, .subcard, .reflection, .purpose, tr { break-inside: avoid; }
-      a { color: inherit; text-decoration: none; }
-      .video-frame, .tag, th { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .hero { min-height: 0; padding: 2rem; print-color-adjust: exact; }
+      .section { margin-top: .8rem; padding: 1.1rem; box-shadow: none; }
       @page { margin: 1.5cm; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .nav-list a { transition: none; }
     }
   </style>
 </head>
@@ -375,8 +155,8 @@
   <div class="layout">
     <aside class="sidebar" aria-label="Portfolio navigation">
       <a class="brand" href="#cover">
-        <span class="brand-mark" aria-hidden="true">CR</span>
-        <span><strong>Teaching Portfolio</strong><small>CRE · The Good Samaritan</small></span>
+        <span class="brand-mark" aria-hidden="true">HI</span>
+        <span><strong>Teaching Portfolio</strong><small>History · Evolution of Man</small></span>
       </a>
       <p class="nav-label">Portfolio contents</p>
       <nav aria-label="Portfolio pages" role="tablist">
@@ -386,10 +166,10 @@
           <li><a href="#syllabus" role="tab" aria-selected="false"><span class="number">03</span><span>Syllabus</span></a></li>
           <li><a href="#schemes" role="tab" aria-selected="false"><span class="number">04</span><span>Schemes of Work</span></a></li>
           <li><a href="#lesson-plan" role="tab" aria-selected="false"><span class="number">05</span><span>Lesson Plan</span></a></li>
-          <li><a href="#teaching-guide" role="tab" aria-selected="false"><span class="number">06</span><span>Teaching Guide / Video</span></a></li>
-          <li><a href="#lesson-notes" role="tab" aria-selected="false"><span class="number">07</span><span>Lesson Notes</span></a></li>
-          <li><a href="#teaching-aid" role="tab" aria-selected="false"><span class="number">08</span><span>Teaching Aid</span></a></li>
-          <li><a href="#performance" role="tab" aria-selected="false"><span class="number">09</span><span>Review · Students’ Performance</span></a></li>
+          <li><a href="#teaching-guide" role="tab" aria-selected="false"><span class="number">06</span><span>Lesson Video / Teaching Video</span></a></li>
+          <li><a href="#teaching-aid" role="tab" aria-selected="false"><span class="number">07</span><span>Teaching Aid</span></a></li>
+          <li><a href="#lesson-notes" role="tab" aria-selected="false"><span class="number">08</span><span>Teaching Notes / Lesson Notes</span></a></li>
+          <li><a href="#performance" role="tab" aria-selected="false"><span class="number">09</span><span>Students’ Performance</span></a></li>
           <li><a href="#records" role="tab" aria-selected="false"><span class="number">10</span><span>Records of Work Covered</span></a></li>
         </ol>
       </nav>
@@ -399,18 +179,18 @@
     <main id="main-content">
       <div class="document">
         <div class="topline">
-          <span>CHRISTIAN RELIGIOUS EDUCATION · TEACHING PORTFOLIO</span>
-          <span class="folio">Portfolio · 01–10</span>
+          <span>HISTORY · TEACHING PORTFOLIO</span>
+          <span>Portfolio · 01–10</span>
         </div>
 
-        <header class="hero" id="home-banner">
+        <header class="hero" id="cover-banner">
           <p class="eyebrow">Professional Teaching Portfolio</p>
-          <h1>CRE: The Good Samaritan</h1>
+          <h1>History: Evolution of Man</h1>
           <p class="subtitle">A reflective collection of planning, teaching resources, learner assessment, and professional practice.</p>
-          <div class="hero-meta" aria-label="Portfolio details">
-              <span>Teacher: Kakenya Lucy</span>
-              <span>Class / Level: Grade 10</span>
-              <span>School: Moi Girls Eldoret</span>
+          <div class="hero-meta">
+            <span>Teacher: BERIL OCHIENG</span>
+            <span>Class / Level: Grade 10</span>
+            <span>School: Chepterit Girls</span>
           </div>
         </header>
 
@@ -421,291 +201,147 @@
           </div>
           <p class="purpose"><strong>Purpose of this section:</strong> Introduce the teacher, professional values, and the evidence presented in this portfolio.</p>
           <div class="profile-row">
-            <img class="profile-photo" src="lucy-kakenya-profile.jpg" alt="Portrait photograph of Kakenya Lucy outdoors">
+            <img class="profile-photo" src="beril-ochieng-profile.jpg" alt="Portrait photograph of BERIL OCHIENG">
             <div>
-              <p class="teacher-name">Kakenya Lucy</p>
-              <p class="teacher-role">CRE Student · Aspiring CRE Teacher</p>
+              <p class="teacher-name">BERIL OCHIENG</p>
+              <p class="teacher-role">History Student · Aspiring History Teacher</p>
               <h3>Professional biography</h3>
-              <p>My name is Lucy, and I am a student pursuing Christian Religious Education (CRE). I have a passion for learning about God, the Bible, and Christian values. Through CRE, I aim to grow spiritually, morally, and academically.</p>
+              <p>I am a student of History with an interest in understanding how humans, societies, and environments changed over time. I seek to develop accurate historical knowledge, strong inquiry skills, and respect for evidence.</p>
               <h3>Teaching philosophy</h3>
-              <p>I believe in love, honesty, kindness, respect, and forgiveness. My dream is to become a qualified CRE teacher who inspires learners, teaches good morals, and helps others understand God’s word. My goal is to make a positive difference in society through Christian teachings.</p>
+              <p>I believe History should help learners ask questions, examine evidence, understand cause and consequence, and make thoughtful judgments about the past. My goal is to create an inclusive classroom where every learner can communicate ideas clearly and engage confidently with historical sources.</p>
             </div>
           </div>
           <div class="grid-2" style="margin-top:1.1rem">
-            <div class="subcard"><h3>About this portfolio</h3><p>This portfolio documents a learning sequence on Jesus’ parable of the Good Samaritan. It brings together curriculum planning, a lesson plan, teaching materials, learner evidence, and a record of work.</p></div>
-            <div class="subcard"><h3>Table of contents</h3>
-              <ol>
-                <li><a href="#syllabus">Syllabus</a></li>
-                <li><a href="#schemes">Schemes of Work</a></li>
-                <li><a href="#lesson-plan">Lesson Plan</a></li>
-                <li><a href="#teaching-guide">Teaching Guide / Lesson Video</a></li>
-                <li><a href="#lesson-notes">Lesson Notes</a></li>
-                <li><a href="#teaching-aid">Teaching Aid</a></li>
-                <li><a href="#performance">Students’ Performance</a></li>
-                <li><a href="#records">Records of Work Covered</a></li>
-              </ol>
-            </div>
+            <div class="subcard"><h3>About this portfolio</h3><p>This portfolio documents a learning sequence on human evolution. It brings together curriculum planning, a lesson plan, teaching materials, learner evidence, and a record of work.</p></div>
+            <div class="subcard"><h3>Table of contents</h3><ol><li><a href="#syllabus">Syllabus</a></li><li><a href="#schemes">Schemes of Work</a></li><li><a href="#lesson-plan">Lesson Plan</a></li><li><a href="#teaching-guide">Lesson Video / Teaching Video</a></li><li><a href="#teaching-aid">Teaching Aid</a></li><li><a href="#lesson-notes">Teaching Notes / Lesson Notes</a></li><li><a href="#performance">Students’ Performance</a></li><li><a href="#records">Records of Work Covered</a></li></ol></div>
           </div>
-          <p class="reflection"><strong>Teacher reflection:</strong> My strengths are a passion for Christian Religious Education, respect for others, and a desire to help learners develop good morals. My goal is to become a qualified CRE teacher who explains Christian teaching clearly and supports every learner. This portfolio shows my growth in planning, teaching, assessment, and reflection.</p>
+          <p class="reflection"><strong>Teacher reflection:</strong> My strengths include curiosity, careful use of evidence, and an interest in helping learners understand change over time. This portfolio demonstrates growth in planning, teaching, assessment, inclusion, and reflection.</p>
         </section>
 
         <section class="section" id="syllabus" aria-labelledby="syllabus-heading">
-          <div class="section-heading">
-            <span class="section-number">03</span>
-            <div><h2 id="syllabus-heading">Syllabus</h2><p class="section-kicker">Curriculum focus and intended learning outcomes</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Show how this learning sequence connects to the relevant CRE curriculum. Adapt the curriculum reference to the school’s approved syllabus.</p>
-          <div class="subcard">
-            <p><span class="tag">TOPIC FOCUS</span></p>
-            <h3>The Good Samaritan · Luke 10:25–37</h3>
-            <p><strong>Strand / theme:</strong> Jesus’ teaching and Christian living · <strong>Sub-topic:</strong> Love of neighbour and compassion · <strong>Class / level:</strong> Grade 10 · <strong>School:</strong> Moi Girls Eldoret · <strong>Curriculum / syllabus edition:</strong> School-approved CRE syllabus, 2026</p>
-          </div>
+          <div class="section-heading"><span class="section-number">03</span><div><h2 id="syllabus-heading">Syllabus</h2><p class="section-kicker">Curriculum focus and intended learning outcomes</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Show how the learning sequence connects to the approved History syllabus.</p>
+          <div class="subcard"><p><span class="tag">TOPIC FOCUS</span></p><h3>Evolution of Man</h3><p><strong>Strand / theme:</strong> Early humans and human development · <strong>Sub-topic:</strong> Stages of human evolution · <strong>Class / level:</strong> Grade 10 · <strong>Curriculum:</strong> Approved school syllabus, 2026</p></div>
           <h3 style="margin-top:1.2rem">Learning outcomes</h3>
-          <p>By the end of the learning sequence, learners should be able to:</p>
-          <ol>
-            <li>Retell the parable of the Good Samaritan in the correct sequence.</li>
-            <li>Identify the characters and describe the choices each character made.</li>
-            <li>Explain who is a neighbour, drawing on Jesus’ response in Luke 10:25–37.</li>
-            <li>Relate compassion and practical help to situations in their community.</li>
-            <li>Demonstrate respectful listening and cooperation during discussion and group work.</li>
-          </ol>
-          <div class="grid-2">
-            <div class="subcard"><h3>Key competencies</h3><p>Communication and collaboration · critical thinking · empathy and responsible citizenship · reflection.</p></div>
-            <div class="subcard"><h3>Values and attitudes</h3><p>Compassion · respect · inclusion · kindness · willingness to help people in need.</p></div>
-          </div>
-          <p class="reflection"><strong>Teacher reflection:</strong> The priority outcomes were understanding Jesus’ teaching, identifying compassion in action, and applying the message to daily life. Reading aloud, sequence cards, role-play, discussion, and written or oral responses provide different ways for learners to participate.</p>
+          <ol><li>Explain the meaning of human evolution.</li><li>Identify major stages or forms in the development of early humans.</li><li>Describe evidence used to study human evolution.</li><li>Arrange selected evolutionary stages in chronological order.</li><li>Explain how environmental changes influenced early human adaptation.</li></ol>
+          <div class="grid-2"><div class="subcard"><h3>Key competencies</h3><p>Historical inquiry · chronological reasoning · evidence analysis · communication · collaboration · critical thinking.</p></div><div class="subcard"><h3>Values and attitudes</h3><p>Respect for evidence · curiosity · open-mindedness · patience · accuracy · cooperation.</p></div></div>
+          <p class="reflection"><strong>Teacher reflection:</strong> The sequence is designed to move from basic vocabulary and timelines to interpretation of evidence and adaptation. Visuals, guided discussion, pair work, and written or oral responses support varied learners.</p>
         </section>
 
         <section class="section" id="schemes" aria-labelledby="schemes-heading">
-          <div class="section-heading">
-            <span class="section-number">04</span>
-            <div><h2 id="schemes-heading">Schemes of Work</h2><p class="section-kicker">A short sequence for teaching and learning</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Map the topic across lessons so that learning builds from familiarity with the story to personal application.</p>
-          <p><strong>School:</strong> Moi Girls Eldoret · <strong>Term:</strong> Term 1 · <strong>Class:</strong> Grade 10 · <strong>Week range:</strong> Weeks 1–3 · <strong>Teacher:</strong> Kakenya Lucy</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Week</th><th>Lesson</th><th>Topic / content</th><th>Objectives</th><th>Activities</th><th>Resources</th><th>Assessment</th></tr></thead>
-              <tbody>
-                <tr><td>Week 1</td><td>1</td><td>Setting and characters · Luke 10:25–30</td><td>Identify the context, characters, and opening events.</td><td>Read aloud; sequence opening events; predict what may happen next.</td><td>Bible / printed passage; story sequence cards.</td><td>Oral questions; sequence check.</td></tr>
-                <tr><td>Week 2</td><td>2</td><td>The choices made on the road · Luke 10:31–35</td><td>Compare the responses of the priest, Levite, and Samaritan.</td><td>Small-group role-play; discuss motives and actions.</td><td>Role cards; board; illustration.</td><td>Group explanation; observation checklist.</td></tr>
-                <tr><td>Week 3</td><td>3</td><td>Who is my neighbour? · Luke 10:36–37</td><td>Explain Jesus’ teaching and apply it to a familiar situation.</td><td>Think-pair-share; case study; write one practical response.</td><td>Case-study cards; learner notebooks.</td><td>Exit ticket; written response.</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="placeholder-label">The three-lesson sequence is planned for three consecutive weeks and can be adjusted to the approved school timetable.</p>
-          <p class="reflection"><strong>Teacher reflection:</strong> The sequence moves from understanding the story to comparing choices and applying the message. Additional time can be given to reading support, role-play, or the practical application task where learners need it.</p>
+          <div class="section-heading"><span class="section-number">04</span><div><h2 id="schemes-heading">Schemes of Work</h2><p class="section-kicker">A short sequence for teaching and learning</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Map the topic across lessons so learning builds from concepts to evidence and application.</p>
+          <p><strong>School:</strong> Chepterit Girls · <strong>Term:</strong> [Add term] · <strong>Class:</strong> Grade 10 · <strong>Week range:</strong> Weeks 1–3 · <strong>Teacher:</strong> BERIL OCHIENG</p>
+          <div class="table-wrap"><table><thead><tr><th>Week</th><th>Lesson</th><th>Topic / content</th><th>Objectives</th><th>Activities</th><th>Resources</th><th>Assessment</th></tr></thead><tbody>
+            <tr><td>Week 1</td><td>1</td><td>Meaning and evidence of human evolution</td><td>Define evolution and identify sources of evidence.</td><td>Brainstorm; source prompt; whole-class discussion.</td><td>Textbook; fossils and artefact images.</td><td>Oral questions; concept check.</td></tr>
+            <tr><td>Week 2</td><td>2</td><td>Major stages and physical change</td><td>Sequence stages and compare adaptations.</td><td>Card ordering; pair explanation; guided video.</td><td>Sequence cards; board; approved video.</td><td>Sequence check; pair feedback.</td></tr>
+            <tr><td>Week 3</td><td>3</td><td>Environment and adaptation</td><td>Explain links between climate, tools, movement, and survival.</td><td>Think-pair-share; case study; exit ticket.</td><td>Maps; scenario cards; learner notebooks.</td><td>Written response; review task.</td></tr>
+          </tbody></table></div>
+          <p class="placeholder-label">Adapt this sequence to the approved curriculum and school timetable.</p>
+          <p class="reflection"><strong>Teacher reflection:</strong> The sequence progresses from definition and evidence to chronological comparison and environmental explanation. It gives learners repeated opportunities to demonstrate understanding.</p>
         </section>
 
         <section class="section" id="lesson-plan" aria-labelledby="lesson-plan-heading">
-          <div class="section-heading">
-            <span class="section-number">05</span>
-            <div><h2 id="lesson-plan-heading">Lesson Plan</h2><p class="section-kicker">CRE · The Good Samaritan · Luke 10:25–37</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Provide a teachable lesson structure with clear learning intentions, learner participation, and checks for understanding.</p>
-          <div class="grid-2">
-            <div class="subcard"><h3>Lesson details</h3><p><strong>School:</strong> Moi Girls Eldoret · <strong>Date:</strong> 2026 · <strong>Class:</strong> Grade 10 · <strong>Duration:</strong> 40 minutes · <strong>Strand:</strong> Jesus’ teaching and Christian living</p></div>
-            <div class="subcard"><h3>Learning objectives</h3><p>By the end of the lesson, learners can retell the parable, compare the characters’ responses, and state one practical way to show compassion.</p></div>
-            <div class="subcard"><h3>Prior knowledge</h3><p>Learners have encountered stories about Jesus and can share examples of kindness or helping others. Invite varied experiences without requiring personal disclosure.</p></div>
-            <div class="subcard"><h3>Materials</h3><p>Bible or printed passage; character / sequence cards; board and markers; short scenario cards; learner notebooks; exit tickets.</p></div>
-          </div>
+          <div class="section-heading"><span class="section-number">05</span><div><h2 id="lesson-plan-heading">Lesson Plan</h2><p class="section-kicker">History · Evolution of Man</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Provide a teachable lesson structure with clear learning intentions, learner participation, and assessment.</p>
+          <div class="grid-2"><div class="subcard"><h3>Lesson details</h3><p><strong>School:</strong> Chepterit Girls · <strong>Date:</strong> [Add date] · <strong>Class:</strong> Grade 10 · <strong>Duration:</strong> 40 minutes · <strong>Strand:</strong> Early humans and human development</p></div><div class="subcard"><h3>Learning objectives</h3><p>By the end of the lesson, learners can define evolution, identify evidence used by historians and archaeologists, and sequence major stages of human development.</p></div><div class="subcard"><h3>Prior knowledge</h3><p>Learners may know that species change, but could misunderstand evolution as linear progress. Address this using accurate, evidence-based examples.</p></div><div class="subcard"><h3>Materials</h3><p>Approved textbook; evidence images; sequence cards; board and markers; learner notebooks; exit tickets.</p></div></div>
           <h3 style="margin-top:1.25rem">Teaching and learning sequence</h3>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Stage / time</th><th>Teacher actions</th><th>Learner actions</th><th>Assessment for learning</th></tr></thead>
-              <tbody>
-                <tr><td>Introduction · 5 min</td><td>Welcome learners. Present a familiar, age-appropriate scenario about someone needing help. Ask: “What could a caring person do?” State the lesson focus.</td><td>Think quietly, then share ideas with a partner or class.</td><td>Listen for examples of helpful actions; note prior understanding.</td></tr>
-                <tr><td>Read and understand · 10 min</td><td>Read Luke 10:25–37 aloud or invite supported reading. Clarify unfamiliar words and check story sequence.</td><td>Follow the passage; identify the characters and arrange story cards.</td><td>Ask learners to retell one event in sequence.</td></tr>
-                <tr><td>Explore and discuss · 12 min</td><td>Guide groups to compare the priest’s, Levite’s, and Samaritan’s choices. Ask what the Samaritan did to help.</td><td>Discuss using character cards; share evidence from the passage.</td><td>Use a simple checklist for participation, sequence, and explanation.</td></tr>
-                <tr><td>Apply learning · 8 min</td><td>Give groups a short everyday scenario. Prompt them to suggest a safe, respectful, practical response.</td><td>Agree on a response and explain how it shows compassion.</td><td>Listen for a relevant action and reason; offer prompts where needed.</td></tr>
-                <tr><td>Conclusion · 5 min</td><td>Return to the question “Who is my neighbour?” Summarise the message and issue an exit ticket.</td><td>Share one learning point and complete: “I can show compassion by…”</td><td>Review exit tickets to plan reteaching or extension.</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="grid-2">
-            <div class="subcard"><h3>Differentiation and inclusion</h3><p>Offer read-aloud support, visuals, paired rehearsal, and sentence starters. Allow oral, drawn, or written responses. Invite extension learners to compare the characters’ choices using evidence from the passage.</p></div>
-            <div class="subcard"><h3>Assessment criteria</h3><ul><li>Accurately identifies key characters and events.</li><li>Explains the Samaritan’s response with a relevant detail.</li><li>Connects the teaching to one practical action.</li></ul></div>
-          </div>
-          <p class="reflection"><strong>Post-lesson reflection:</strong> Learners should understand the sequence of the parable, the Samaritan’s practical care, and the meaning of being a neighbour. Sequence responses, group explanations, and exit tickets provide evidence. Next time, I will allow extra rehearsal time for learners who need reading or speaking support and extend confident learners with a comparison of the characters’ choices.</p>
+          <div class="table-wrap"><table><thead><tr><th>Stage / time</th><th>Teacher actions</th><th>Learner actions</th><th>Assessment for learning</th></tr></thead><tbody>
+            <tr><td>Introduction · 5 min</td><td>Show a fossil or artefact image. Ask what it reveals and what further evidence is needed.</td><td>Predict, observe, and discuss.</td><td>Identify prior knowledge and misconceptions.</td></tr>
+            <tr><td>Explain · 10 min</td><td>Define human evolution and distinguish evidence from speculation.</td><td>Record key terms and examples.</td><td>Check definitions and source types.</td></tr>
+            <tr><td>Explore · 12 min</td><td>Give pairs sequence cards showing major human-development stages.</td><td>Order cards and explain choices using evidence.</td><td>Observation checklist: accuracy and evidence.</td></tr>
+            <tr><td>Apply · 8 min</td><td>Present an environment-change scenario.</td><td>Explain one adaptation and support the claim.</td><td>Listen for cause-and-effect reasoning.</td></tr>
+            <tr><td>Conclude · 5 min</td><td>Summarise and issue an exit ticket.</td><td>Complete: “The evidence tells us…”.</td><td>Use responses to plan reteaching or extension.</td></tr>
+          </tbody></table></div>
+          <div class="grid-2"><div class="subcard"><h3>Differentiation and inclusion</h3><p>Provide word banks, image prompts, paired rehearsal, read-aloud support, and oral or written responses. Extend confident learners with source reliability questions.</p></div><div class="subcard"><h3>Assessment criteria</h3><ul><li>Accurately defines human evolution.</li><li>Uses chronological reasoning.</li><li>Identifies relevant evidence.</li><li>Explains adaptation with a cause-and-effect link.</li></ul></div></div>
+          <p class="reflection"><strong>Post-lesson reflection:</strong> Learners should distinguish evidence from opinion and explain that human evolution involved adaptation and change over time. Use exit tickets to identify misconceptions and plan support.</p>
         </section>
 
         <section class="section" id="teaching-guide" aria-labelledby="guide-heading">
-          <div class="section-heading">
-            <span class="section-number">06</span>
-            <div><h2 id="guide-heading">Teaching Guide / Lesson Video</h2><p class="section-kicker">Practical delivery notes and media placeholder</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Support consistent lesson delivery and provide a place to share a short teaching demonstration or lesson recording.</p>
-          <div class="grid-2">
-            <div>
-              <h3>Teaching guide</h3>
-              <ol class="step-list">
-                <li>Prepare the passage, visual sequence cards, and accessible scenario prompts.</li>
-                <li>Establish a respectful discussion agreement; do not ask learners to disclose sensitive experiences.</li>
-                <li>Read the parable with pauses for prediction, vocabulary, and comprehension checks.</li>
-                <li>Use open questions: “What did the Samaritan do?” and “How did his actions help?”</li>
-                <li>Close with an individual reflection and use responses to plan the next lesson.</li>
-              </ol>
-            </div>
-            <div>
-              <h3>Lesson video</h3>
-              <div class="video-frame">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/8fDMAV29z44"
-                  title="CRE The Samaritan class video presentation by Madam Lucy Kakenya"
-                  loading="lazy"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-              <p style="margin-top:.75rem"><strong>Video:</strong> “CRE The Samaritan Class Video Presentation by Madam Lucy Kakenya.” Use it as an audio-visual presentation of the CRE topic, then invite learners to identify the story’s characters, choices, and message.</p>
-              <p class="placeholder-label">If the player is unavailable, <a href="https://youtu.be/8fDMAV29z44">watch the lesson video on YouTube</a>.</p>
-            </div>
-          </div>
-          <p class="reflection"><strong>How the video supports learning:</strong> The class presentation gives learners another way to engage with the Samaritan topic and revisit its key ideas. Follow viewing with discussion or a short recall task. Check captions and provide an alternative summary where needed.</p>
-          <p class="reflection"><strong>Teacher reflection:</strong> The presentation supports learning by combining explanation with an audio-visual reminder of the topic. I will improve the lesson by pausing at key moments for prediction, vocabulary checks, and learner questions.</p>
-        </section>
-
-        <section class="section" id="lesson-notes" aria-labelledby="notes-heading">
-          <div class="section-heading">
-            <span class="section-number">07</span>
-            <div><h2 id="notes-heading">Lesson Notes</h2><p class="section-kicker">Learner-friendly summary · The Good Samaritan</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Give learners a clear reference for the story, its key message, and the lesson’s vocabulary.</p>
-          <p><strong>Key Bible reference:</strong> Luke 10:25–37. Read the passage in a Bible or the approved class text.</p>
-          <h3>The story in brief</h3>
-          <p>Jesus tells of a man travelling from Jerusalem to Jericho who is attacked and left hurt beside the road. A priest and then a Levite see him but pass by. A Samaritan stops, cares for his injuries, takes him to an inn, and arranges for his care. Jesus asks which traveller acted as a neighbour. The answer is the one who showed mercy.</p>
-          <blockquote class="quote">“Go and do likewise.” — Luke 10:37 (check wording in the Bible translation used in class)</blockquote>
-          <div class="grid-2">
-            <div class="subcard"><h3>Main ideas</h3><ul><li>A neighbour is someone we can treat with care and respect.</li><li>Compassion is shown through helpful action, not only kind words.</li><li>We should not let prejudice or difference stop us from helping.</li></ul></div>
-            <div class="subcard"><h3>Moral lessons</h3><ul><li>Notice when another person needs help.</li><li>Respond with kindness, dignity, and practical care.</li><li>Where a situation is unsafe, seek help from a trusted adult or appropriate service.</li></ul></div>
-          </div>
-          <h3 style="margin-top:1.2rem">Key words</h3>
-          <p><strong>Neighbour:</strong> a person we are called to treat with care. <strong>Compassion:</strong> concern for someone who is suffering, expressed through care. <strong>Mercy:</strong> kindness and help offered to someone in need.</p>
-          <h3>Review questions</h3>
-          <ol class="question-list">
-            <li>Where was the injured man travelling?</li>
-            <li>Which people passed by, and who stopped to help?</li>
-            <li>Name two things the Samaritan did for the injured man.</li>
-            <li>What does this story teach about being a neighbour?</li>
-            <li>What is one safe and practical way you could show compassion?</li>
-          </ol>
-          <p class="reflection"><strong>Teacher reflection:</strong> Learners can recall the main characters, the Samaritan’s actions, and the instruction to “go and do likewise.” The meaning of compassion and the importance of responding safely may need reinforcement through additional examples and discussion.</p>
+          <div class="section-heading"><span class="section-number">06</span><div><h2 id="guide-heading">Lesson Video / Teaching Video</h2><p class="section-kicker">Teaching guide, visual support, and YouTube lesson</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Provide practical video-assisted teaching guidance alongside a linked lesson video.</p>
+          <div class="grid-2"><div><h3>Teaching guide</h3><ol class="step-list"><li>Display a fossil, artefact, or the visual below. Ask learners what each source reveals.</li><li>Introduce evolution as a branching process of change over many generations.</li><li>Use the timeline to identify the order of selected human-development stages.</li><li>Ask learners to distinguish evidence, interpretation, and guesswork.</li><li>Conclude with the claim: “Evidence shows that early humans adapted to changing environments.”</li></ol></div><div><h3>Textbook-style visual</h3><figure style="margin:0"><img class="profile-photo" src="evolution-teaching-guide.svg" alt="Textbook-style diagram comparing fossil evidence, tool use, migration, adaptation, and modern humans"><figcaption class="placeholder-label" style="margin-top:.55rem">Visual guide for source observation and chronological discussion.</figcaption></figure><h3 style="margin-top:1rem">Lesson video</h3><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/sGlwoNj_HPk" title="YouTube lesson video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="placeholder-label" style="margin-top:.55rem"><a href="https://youtu.be/sGlwoNj_HPk?si=FOaFjP1UWecfgA9u" target="_blank" rel="noopener noreferrer">Watch this lesson on YouTube</a></p></div></div>
+          <p class="reflection"><strong>Teacher reflection:</strong> The visual supports source observation, chronology, and adaptation without relying on internet video access. Learners should pause to identify evidence, explain change over time, and distinguish fact from interpretation.</p>
         </section>
 
         <section class="section" id="teaching-aid" aria-labelledby="aid-heading">
-          <div class="section-heading">
-            <span class="section-number">08</span>
-            <div><h2 id="aid-heading">Teaching Aid</h2><p class="section-kicker">Visual story-sequence cards</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Document a teaching resource and explain how it supports learners to understand and discuss the parable.</p>
+          <div class="section-heading"><span class="section-number">07</span><div><h2 id="aid-heading">Teaching Aid</h2><p class="section-kicker">Printable evidence and adaptation sorting cards</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Provide a ready-to-use card activity to help learners connect evidence with human development and adaptation.</p>
           <div class="grid-2">
-            <figure style="margin:0">
-              <img class="profile-photo" src="good-samaritan-teaching-aid.svg" alt="Four teaching-aid cards showing the Good Samaritan story sequence: the traveller is attacked, people pass by, the Samaritan helps, and the injured traveller is cared for">
-              <figcaption class="placeholder-label" style="margin-top:.55rem">Teacher-created story sequence cards for Grade 10 CRE at Moi Girls Eldoret.</figcaption>
-            </figure>
             <div>
-              <h3>Aid: Story-sequence and character cards</h3>
-              <p><strong>Description:</strong> A set of illustrated or text-based cards showing key events and characters from Luke 10:25–37.</p>
-              <p><strong>Purpose:</strong> Make the sequence visible, support recall, and help learners compare the choices made by the travellers.</p>
-              <p><strong>How to use:</strong> Learners work in pairs to order the event cards, match characters to actions, and explain which action showed mercy.</p>
-              <p><strong>Accessibility:</strong> Use large, high-contrast images with short captions; provide tactile or verbal alternatives as appropriate.</p>
-              <p><strong>Materials / preparation:</strong> Bible or printed passage, card stock, markers, scissors, and learner notebooks. Prepare the cards by writing or drawing the main events and characters from Luke 10:25–37. The resource is teacher-created for the Grade 10 CRE lesson at Moi Girls Eldoret.</p>
+              <h3>Cut-out / display cards</h3>
+              <div class="aid-cards">
+                <article class="aid-card"><span>1</span><h3>Fossil evidence</h3><p>What can bones or footprints tell us about earlier humans?</p></article>
+                <article class="aid-card"><span>2</span><h3>Tools and artefacts</h3><p>What can objects made or used by people reveal about daily life?</p></article>
+                <article class="aid-card"><span>3</span><h3>Environment</h3><p>How could changes in climate or food sources affect survival?</p></article>
+                <article class="aid-card"><span>4</span><h3>Adaptation</h3><p>Use evidence to explain one change that helped people respond to their environment.</p></article>
+              </div>
+            </div>
+            <div>
+              <h3>How to use this aid</h3>
+              <ol class="step-list">
+                <li>Display or print the four cards; cut them out if using as a sorting activity.</li>
+                <li>In pairs, learners match each card to a textbook image, source, or example.</li>
+                <li>Ask learners to order their explanation: evidence, observation, and conclusion.</li>
+                <li>Invite each pair to share one claim supported by a source.</li>
+              </ol>
+              <p class="placeholder-label">Print this page or use the cards on screen. Check historical examples against the approved class textbook.</p>
             </div>
           </div>
-          <p class="reflection"><strong>Teacher reflection:</strong> The cards make the story sequence visible and give learners a concrete way to discuss characters and actions. I would adapt the aid by increasing print size, adding clearer captions, and providing verbal descriptions where needed.</p>
+          <p class="reflection"><strong>Teacher reflection:</strong> The cards give learners a structured, collaborative way to discuss evidence and adaptation. Add images or local examples from approved learning resources as needed.</p>
+        </section>
+
+        <section class="section" id="lesson-notes" aria-labelledby="notes-heading">
+          <div class="section-heading"><span class="section-number">08</span><div><h2 id="notes-heading">Teaching Notes / Lesson Notes</h2><p class="section-kicker">Learner-friendly summary · Evolution of Man</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Give learners a clear reference for key concepts, evidence, and vocabulary.</p>
+          <h3>Human evolution in brief</h3>
+          <p>Human evolution is the long-term change of humans and their ancestors over many generations. Evidence comes from fossils, archaeology, anatomy, genetics, and the study of environmental change. Evolution should be understood as a branching process, not a straight line from “primitive” humans to modern people.</p>
+          <blockquote class="quote">“Study the evidence, identify change over time, and explain it using cause and consequence.”</blockquote>
+          <div class="grid-2"><div class="subcard"><h3>Main ideas</h3><ul><li>Humans share ancestry with other living organisms.</li><li>Natural variation and environmental pressure can influence survival.</li><li>Tools, movement, diet, and social behaviour changed over time.</li></ul></div><div class="subcard"><h3>Types of evidence</h3><ul><li>Fossils provide physical remains.</li><li>Artefacts reveal tools and behaviour.</li><li>Genetic and anatomical evidence supports relationships.</li></ul></div></div>
+          <h3 style="margin-top:1.2rem">Key words</h3>
+          <p><strong>Evolution:</strong> long-term change in inherited characteristics. <strong>Adaptation:</strong> a feature or behaviour that improves survival or reproduction in a particular environment. <strong>Fossil:</strong> preserved remains or traces of past life. <strong>Artefact:</strong> an object made or modified by humans.</p>
+          <h3>Review questions</h3><ol><li>What does human evolution mean?</li><li>Name two types of evidence used to study human evolution.</li><li>Why is it inaccurate to present evolution as a straight ladder?</li><li>How might environmental change influence adaptation?</li><li>What evidence supports one conclusion about early human behaviour?</li></ol>
+          <p class="reflection"><strong>Teacher reflection:</strong> Reinforce accurate scientific vocabulary and discourage common misconceptions. The approved textbook and curriculum should determine the exact stages covered.</p>
         </section>
 
         <section class="section" id="performance" aria-labelledby="performance-heading">
-          <div class="section-heading">
-            <span class="section-number">09</span>
-            <div><h2 id="performance-heading">Students’ Performance</h2><p class="section-kicker">Assessment evidence and next steps</p></div>
-          </div>
+          <div class="section-heading"><span class="section-number">09</span><div><h2 id="performance-heading">Students’ Performance</h2><p class="section-kicker">Assessment evidence and next steps</p></div></div>
           <p class="purpose"><strong>Purpose of this section:</strong> Summarise learner progress against the lesson objectives and use evidence to plan responsive teaching.</p>
-          <p class="placeholder-label">Grade 10 performance record supplied for Moi Girls Eldoret. Follow school policy for consent, confidentiality, and storage of student work.</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Assessment focus</th><th>Evidence / measure</th><th>Results</th><th>Interpretation / next step</th></tr></thead>
-              <tbody>
-                <tr><td>Retells key events in sequence</td><td>Class assessment record</td><td>20 learners recorded · average 75.1</td><td>Use the lesson sequence cards and read-aloud support to reinforce recall.</td></tr>
-                <tr><td>Explains how the Samaritan showed mercy</td><td>Teacher comments and written responses</td><td>Grades range from A to C</td><td>Strengthen evidence-based explanations for learners below the class average.</td></tr>
-                <tr><td>Applies the lesson to a practical situation</td><td>Assignment, project, and teacher comment</td><td>20 learner comments recorded</td><td>Extend strong learners and provide sentence starters for developing responses.</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <p class="placeholder-label">Replace this sample table with the approved Grade 10 results. Follow school policy for consent, confidentiality, and storage.</p>
+          <div class="table-wrap"><table><thead><tr><th>Assessment focus</th><th>Evidence / measure</th><th>Results</th><th>Interpretation / next step</th></tr></thead><tbody><tr><td>Defines human evolution</td><td>Exit ticket</td><td>Record actual results</td><td>Clarify evolution and branching processes.</td></tr><tr><td>Uses evidence</td><td>Source task</td><td>Record actual results</td><td>Model claim, evidence, and explanation.</td></tr><tr><td>Explains adaptation</td><td>Written scenario response</td><td>Record actual results</td><td>Strengthen cause-and-effect reasoning.</td></tr></tbody></table></div>
           <h3 style="margin-top:1.25rem">Grade 10 performance record</h3>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>No.</th><th>Admission no.</th><th>Learner name</th><th>CAT 1</th><th>CAT 2</th><th>Assignment</th><th>Project</th><th>Exam</th><th>Total / average</th><th>Grade</th><th>Teacher comment</th></tr></thead>
-              <tbody>
-                <tr><td>1</td><td>6167</td><td>Daniel Wanjala</td><td>72</td><td>74</td><td>68</td><td>80</td><td>76</td><td>74</td><td>B</td><td>Good understanding of key concepts; continue building evidence-based explanations.</td></tr>
-                <tr><td>2</td><td>6168</td><td>Brian Muthoni</td><td>80</td><td>78</td><td>82</td><td>84</td><td>88</td><td>82</td><td>A</td><td>Strong analytical work and confident historical reasoning.</td></tr>
-                <tr><td>3</td><td>6169</td><td>Kevin Kiprotich</td><td>68</td><td>70</td><td>72</td><td>76</td><td>75</td><td>72</td><td>B</td><td>Consistent participation and improving source-based argumentation.</td></tr>
-                <tr><td>4</td><td>6170</td><td>Joseph Kibet</td><td>61</td><td>65</td><td>70</td><td>72</td><td>68</td><td>67</td><td>C+</td><td>Shows potential; focus on organising historical evidence clearly.</td></tr>
-                <tr><td>5</td><td>6171</td><td>Peter Otieno</td><td>78</td><td>76</td><td>81</td><td>83</td><td>80</td><td>80</td><td>A-</td><td>Very good explanation of causes and effects in historical contexts.</td></tr>
-                <tr><td>6</td><td>6172</td><td>Anthony Karanja</td><td>58</td><td>62</td><td>64</td><td>66</td><td>70</td><td>64</td><td>C</td><td>Needs stronger use of key dates and supporting evidence in responses.</td></tr>
-                <tr><td>7</td><td>6173</td><td>Collins Omondi</td><td>84</td><td>82</td><td>86</td><td>88</td><td>90</td><td>86</td><td>A</td><td>Excellent historical inquiry and interpretation of sources.</td></tr>
-                <tr><td>8</td><td>6174</td><td>Victor Langat</td><td>74</td><td>72</td><td>78</td><td>79</td><td>77</td><td>76</td><td>B+</td><td>Good progress; continue expanding your use of accurate historical terminology.</td></tr>
-                <tr><td>9</td><td>6175</td><td>Samuel Njuguna</td><td>66</td><td>69</td><td>71</td><td>73</td><td>74</td><td>71</td><td>B-</td><td>Shows a sound understanding; work on deeper analysis of source reliability.</td></tr>
-                <tr><td>10</td><td>6176</td><td>Martin Mwangi</td><td>88</td><td>86</td><td>90</td><td>91</td><td>93</td><td>90</td><td>A</td><td>Outstanding performance and excellent structured historical writing.</td></tr>
-                <tr><td>11</td><td>6177</td><td>Daniel Wanjala</td><td>63</td><td>67</td><td>69</td><td>71</td><td>72</td><td>68</td><td>C+</td><td>Strengthen narrative accuracy and support responses with examples.</td></tr>
-                <tr><td>12</td><td>6178</td><td>Joseph Kibet</td><td>71</td><td>73</td><td>77</td><td>79</td><td>78</td><td>76</td><td>B+</td><td>Steady improvement; keep making evidence-based comparisons.</td></tr>
-                <tr><td>13</td><td>6179</td><td>Brian Muthoni</td><td>55</td><td>60</td><td>62</td><td>64</td><td>67</td><td>62</td><td>C</td><td>More revision and explanation of key concepts will improve performance.</td></tr>
-                <tr><td>14</td><td>6180</td><td>Peter Otieno</td><td>81</td><td>83</td><td>85</td><td>84</td><td>87</td><td>84</td><td>A-</td><td>Strong grasp of chronology and use of relevant historical evidence.</td></tr>
-                <tr><td>15</td><td>6181</td><td>Samuel Njuguna</td><td>59</td><td>61</td><td>63</td><td>65</td><td>69</td><td>63</td><td>C</td><td>Participates reasonably; improve confidence in answering extended questions.</td></tr>
-                <tr><td>16</td><td>6182</td><td>Victor Langat</td><td>76</td><td>74</td><td>79</td><td>80</td><td>82</td><td>78</td><td>B+</td><td>Good understanding of source interpretation and historical themes.</td></tr>
-                <tr><td>17</td><td>6183</td><td>Collins Omondi</td><td>64</td><td>66</td><td>68</td><td>70</td><td>73</td><td>68</td><td>C+</td><td>Needs more consistent revision to strengthen comprehension.</td></tr>
-                <tr><td>18</td><td>6184</td><td>Martin Mwangi</td><td>87</td><td>85</td><td>89</td><td>90</td><td>91</td><td>88</td><td>A</td><td>Excellent depth of understanding and high-quality responses.</td></tr>
-                <tr><td>19</td><td>6185</td><td>Kevin Kiprotich</td><td>70</td><td>69</td><td>73</td><td>75</td><td>76</td><td>73</td><td>B</td><td>Good effort; continue refining historical argument and evaluation skills.</td></tr>
-                <tr><td>20</td><td>6186</td><td>Anthony Karanja</td><td>75</td><td>77</td><td>79</td><td>82</td><td>81</td><td>79</td><td>B+</td><td>Strong performance with good evidence and clear interpretation of events.</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="grid-2">
-            <div class="subcard"><h3>Performance summary</h3><p>The class average is 75.1 across 20 learners. The highest recorded average is 90 and the lowest is 62. Grade distribution: 4 A, 2 A-, 4 B+, 3 B, 1 B-, 3 C+, and 3 C. Stronger learners should receive extension tasks, while learners below the class average need structured revision and evidence-based response practice.</p></div>
-            <div class="subcard"><h3>Sample student work</h3><p><strong>Anonymised response prompt:</strong> “I can show compassion by helping someone who is in need, listening respectfully, and seeking a trusted adult when a situation is unsafe.”</p><p class="placeholder-label">Keep learner names and identifying details out of portfolio copies.</p></div>
-          </div>
-          <p class="reflection"><strong>Analysis and teacher reflection:</strong> Compare the verified responses with the three lesson objectives. Reteach sequencing or vocabulary where recall is incomplete, model evidence-based explanations where learners need support, and extend confident learners through unfamiliar compassion scenarios.</p>
+          <p class="placeholder-label">[Add verified learner names, admission numbers, marks, grades, and approved teacher comments.]</p>
+          <div class="grid-2"><div class="subcard"><h3>Performance summary</h3><p>[Summarise the class average, highest and lowest performance, grade distribution, and identified learning needs.]</p></div><div class="subcard"><h3>Sample student work</h3><p><strong>Prompt:</strong> “The evidence suggests that early humans adapted to environmental change because…”</p><p class="placeholder-label">Use anonymised or approved work only.</p></div></div>
+          <p class="reflection"><strong>Analysis and teacher reflection:</strong> Compare results with the lesson objectives. Reteach chronology or evidence where needed, model source interpretation for developing learners, and extend confident learners with comparative or reliability questions.</p>
         </section>
 
         <section class="section" id="records" aria-labelledby="records-heading">
-          <div class="section-heading">
-            <span class="section-number">10</span>
-            <div><h2 id="records-heading">Records of Work Covered</h2><p class="section-kicker">Teaching record and follow-up notes</p></div>
-          </div>
-          <p class="purpose"><strong>Purpose of this section:</strong> Maintain a concise, dated record of the curriculum covered, learning activities, and any action needed.</p>
-          <p><strong>School:</strong> Moi Girls Eldoret · <strong>Class:</strong> Grade 10 · <strong>Term:</strong> Term 1 · <strong>Teacher:</strong> Kakenya Lucy</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Date</th><th>Topic / content covered</th><th>Activities / resources used</th><th>Teacher remarks / follow-up</th></tr></thead>
-              <tbody>
-                <tr><td>[DD/MM/YYYY]</td><td>Introduction and characters · Luke 10:25–30</td><td>[Reading, discussion, sequence cards]</td><td>[Coverage, learner response, next step]</td></tr>
-                <tr><td>[DD/MM/YYYY]</td><td>Choices and compassion · Luke 10:31–35</td><td>[Role-play, character cards]</td><td>[Coverage, learner response, next step]</td></tr>
-                <tr><td>[DD/MM/YYYY]</td><td>Who is my neighbour? · Luke 10:36–37</td><td>[Scenario discussion, exit ticket]</td><td>[Coverage, learner response, next step]</td></tr>
-                <tr><td>[DD/MM/YYYY]</td><td>[Additional topic / revision]</td><td>[Activities and resources]</td><td>[Remarks / follow-up]</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="reflection"><strong>Teacher reflection:</strong> [At the end of the sequence, record what was completed, any content carried forward, and the next planned learning.]</p>
+          <div class="section-heading"><span class="section-number">10</span><div><h2 id="records-heading">Records of Work Covered</h2><p class="section-kicker">Teaching record and follow-up notes</p></div></div>
+          <p class="purpose"><strong>Purpose of this section:</strong> Maintain a dated record of curriculum covered, learning activities, and follow-up.</p>
+          <p><strong>School:</strong> Chepterit Girls · <strong>Class:</strong> Grade 10 · <strong>Term:</strong> [Add term] · <strong>Teacher:</strong> BERIL OCHIENG</p>
+          <div class="table-wrap"><table><thead><tr><th>Date</th><th>Topic / content covered</th><th>Activities / resources used</th><th>Teacher remarks / follow-up</th></tr></thead><tbody>
+            <tr><td>[DD/MM/YYYY]</td><td>Meaning and evidence of human evolution</td><td>Discussion, source prompt, evidence images</td><td>[Coverage, learner response, next step]</td></tr>
+            <tr><td>[DD/MM/YYYY]</td><td>Major stages and physical change</td><td>Sequence cards, timeline, pair explanation</td><td>[Coverage, learner response, next step]</td></tr>
+            <tr><td>[DD/MM/YYYY]</td><td>Environment and adaptation</td><td>Scenario task, discussion, exit ticket</td><td>[Coverage, learner response, next step]</td></tr>
+            <tr><td>[DD/MM/YYYY]</td><td>[Revision or additional topic]</td><td>[Activities and resources]</td><td>[Remarks / follow-up]</td></tr>
+          </tbody></table></div>
+          <p class="reflection"><strong>Teacher reflection:</strong> [Record what was completed, content carried forward, learner needs, and the next planned learning.]</p>
         </section>
 
-        <footer class="footer">
-          <span>Professional Teaching Portfolio · CRE</span>
-          <span>Kakenya Lucy · 2026</span>
-        </footer>
+        <footer class="footer"><span>Professional Teaching Portfolio · History</span><span>BERIL OCHIENG · 2026</span></footer>
       </div>
     </main>
   </div>
   <script>
     (() => {
       const tabs = [...document.querySelectorAll('[role="tab"]')];
-      const pageIds = new Set(['cover', 'home', 'syllabus', 'schemes', 'lesson-plan', 'teaching-guide', 'lesson-notes', 'teaching-aid', 'performance', 'records']);
+      const pageIds = new Set(['cover', 'home', 'syllabus', 'schemes', 'lesson-plan', 'teaching-guide', 'teaching-aid', 'lesson-notes', 'performance', 'records']);
       const pageLinks = [...document.querySelectorAll('a[href^="#"]')].filter((link) => pageIds.has(link.getAttribute('href').slice(1)));
       const panels = [...document.querySelectorAll('.section')];
       const hero = document.querySelector('.hero');
       const topline = document.querySelector('.topline');
       const footer = document.querySelector('.footer');
       const homePanel = document.querySelector('#bio-heading').closest('.section');
-
       function showPage(id) {
         const pageId = id || 'cover';
         const isCover = pageId === 'cover';
@@ -713,30 +349,17 @@
         hero.hidden = !isCover;
         topline.hidden = isHome || isCover;
         footer.hidden = isHome || isCover;
-        panels.forEach((panel) => {
-          panel.hidden = isHome ? panel !== homePanel : panel.id !== pageId;
-        });
-        tabs.forEach((tab) => {
-          const selected = tab.getAttribute('href') === `#${pageId}`;
-          tab.setAttribute('aria-selected', String(selected));
-        });
-        document.title = isCover
-          ? 'Cover Page · Kakenya Lucy'
-          : isHome
-          ? 'Home · Kakenya Lucy'
-          : `${document.querySelector(`#${pageId} h2`).textContent} · Kakenya Lucy`;
+        panels.forEach((panel) => { panel.hidden = isHome ? panel !== homePanel : panel.id !== pageId; });
+        tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('href') === '#' + pageId)));
+        document.title = isCover ? 'Cover Page · BERIL OCHIENG' : isHome ? 'Home · BERIL OCHIENG' : document.querySelector('#' + pageId + ' h2').textContent + ' · BERIL OCHIENG';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-
-      pageLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          const pageId = link.getAttribute('href').slice(1);
-          history.pushState({ pageId }, '', `#${pageId}`);
-          showPage(pageId);
-        });
-      });
-
+      pageLinks.forEach((link) => link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const pageId = link.getAttribute('href').slice(1);
+        history.pushState({ pageId }, '', '#' + pageId);
+        showPage(pageId);
+      }));
       window.addEventListener('popstate', () => showPage(window.location.hash.slice(1)));
       window.addEventListener('hashchange', () => showPage(window.location.hash.slice(1)));
       showPage(window.location.hash.slice(1) || 'cover');
